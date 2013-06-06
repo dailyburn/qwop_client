@@ -16,6 +16,10 @@ Or install it yourself as:
 
     $ gem install qwop_client
 
+After installing you will need to add an initializer that defines QwopClient.nsq_host (default: localhost) and QwopClient.nsq_port (default: 4150). If using rails this file can be generated for you by running:
+
+	$ rails generate initializer
+
 ## Usage
 
 	QwopClient::Mailers::Sendgrid.queue("name_of_your_nsq_queue", Mail.new)

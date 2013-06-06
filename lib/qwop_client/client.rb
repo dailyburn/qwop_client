@@ -12,8 +12,8 @@ module QwopClient
         :args => args
       }
 
-      NSQ::Publisher.new('localhost', 4150) do |publisher| 
-          publisher.publish(queue, message.to_json)
+      NSQ::Publisher.new(QwopClient::nsq_host, QwopClient::nsq_port) do |publisher|
+        publisher.publish(queue, message.to_json)
       end
     end
 
